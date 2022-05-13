@@ -628,6 +628,7 @@ function isPositive(a) {
     }
 }
 
+//recorrer objetos
 const notas = {
     zoa: 5,
     ulises: 7,
@@ -653,3 +654,36 @@ function promedioForOf(notas){
     }
     return suma/array.length;
 }
+
+
+//funciones superiores
+function fabricaDeFunciones(min, max){
+    return function (num){
+        return num >=min && num <= max;
+    }
+}
+
+//función que crea un objeto Rectángulo:
+function Rectangle(a, b) {
+    const obj = {
+        length: a,
+        width: b,
+        perimeter: 2*(a + b),
+        area: a*b
+    };
+    
+    return obj;
+}
+
+// Complete the function in the editor. It has one parameter: an array, , of objects. Each object in the array has two integer properties denoted by  and . The function must return a count of all such objects  in array  that satisfy .
+function getCount(objects) {
+    let contador = 0;
+    for(let i = 0; i < objects.length; i++){
+        if(objects[i].x == objects[i].y){
+            contador++
+        }
+    }
+    return contador
+}
+
+
