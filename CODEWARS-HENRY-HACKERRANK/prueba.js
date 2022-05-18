@@ -790,3 +790,31 @@ function abbrevName2(name){
 function invert(array) {
     return array.map( value => value *= -1 );
 }
+
+// There was a test in your class and you passed it. Congratulations!
+// But you're an ambitious person. You want to know if you're better than the average student in your class.
+// You receive an array with your peers' test scores. Now calculate the average and compare your score!
+// Return True if you're better, else False!
+function betterThanAverage(classPoints, yourPoints) {
+    const suma = classPoints.reduce((acumulador, valorActual) => {
+        return acumulador + valorActual;
+    });
+    
+    return yourPoints > suma/classPoints.length;
+}
+
+//Create a function which translates a given DNA string into RNA.
+//For example:
+//"GCAT"  =>  "GCAU"
+function DNAtoRNA(dna) {
+    const arr = dna.split('');
+    const newArr = arr.map((item) => (item === "T") ? item.replace("T", "U"):item)
+    
+    return newArr.join('');
+}
+
+const DNAtoRNA2 = dna => dna.replace(/T/g, 'U');
+
+function DNAtoRNA3(dna) {
+    return dna.split("T").join("U");
+}
