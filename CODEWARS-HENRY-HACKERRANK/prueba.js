@@ -686,4 +686,107 @@ function getCount(objects) {
     return contador
 }
 
+// ------------------ CODEWARS -----------------------
 
+function between(a, b) {
+    var numbers = [];
+        for (var i = a; i <= b; i++) {
+        numbers.push(i);
+        }
+    return numbers;
+}
+
+// -------------------- NUMEN --------------------- //
+
+// const titulos = peliculas.map((pelicula) => pelicula.titulo + " - " + pelicula.puntuacion + "/100");
+
+// const palabras = ["lol", "doggqfq", "asd"];
+// const todasPalabras = palabras.every((palabra) => {
+//     return palabra.length === 3;
+// });
+
+function mayorACien(array) {
+  //La función recibe un array con enteros entre 0 y 200. Recorrer el array y guardar en un nuevo array sólo los
+  //valores mayores a 100 (no incluye el 100). Finalmente devolver el nuevo array.
+  // Tu código:
+    const nuevoArray = array.filter(valor => valor >= 100)
+
+    return nuevoArray;
+}
+
+
+
+// Write a function that will check if two given characters are the same case.
+
+// If either of the characters is not a letter, return -1
+// If both characters are the same case, return 1
+// If both characters are letters, but not the same case, return 0
+// function sameCase1(a, b){
+//     if(typeof a !== "string" || typeof b !== "string"){
+//         return -1;
+//     }else if( !(/[a-zA-Z]/i).test(a) || !(/[a-zA-Z]/i).test(b)){
+//         return -1;        
+//     }else if(a == a.toUpperCase() && b == b.toUpperCase()){
+//         return 1;
+//     }else if(a == a.toLowerCase() && b == b.toLowerCase()){
+//         return 1;
+//     }else{
+//         return 0;
+//     }
+// }
+
+// function sameCase2(a, b){
+//     if(a.toUpperCase() === a.toLowerCase() || b.toLowerCase() === b.toUpperCase()){
+//         return -1
+//     }else if(a === a.toLowerCase() && b === b.toLowerCase() || a === a.toUpperCase() && b === b.toUpperCase()){
+//         return 1
+//     }else{
+//         return 0
+//     }
+// }
+
+// const sameCase = (a,b) => /[a-z]/i.test(a) && /[a-z]/i.test(b) ? Number(/[a-z]/.test(a) == /[a-z]/.test(b)) : -1
+
+//turn a number into a string
+function numberToString(num) {
+    return num.toString();
+}
+
+function numberToString2(num) {
+    // Return a string of the number here!
+    return String(num);
+}
+
+const numberToString3 = num => `${num}`;
+
+function numberToString4(num) {
+    return ''+num;
+}
+
+//turn a str tu uppercase
+const toUpperCase = (str) => str.toUpperCase();
+
+// check if any element from an array contains a given value
+const check = (a,x) => a.includes(x);
+function check2(a,x){
+    return a.indexOf(x) > -1 ? true : false;
+};
+const check3 = (arr, x) => arr.some(item => item == x);
+
+
+//función que tome un string y devuelva las iniciales de las palabras en mayúscula 
+function abbrevName(name){
+    const nombre = name.toUpperCase();
+        
+    let array = nombre.split(' ');
+    return array[0][0] + "." + array[1][0];
+}
+
+function abbrevName2(name){
+    return name.split(' ').map(i => i[0].toUpperCase()).join('.')
+}
+
+// función que invierta el signo de los elementos de un array
+function invert(array) {
+    return array.map( value => value *= -1 );
+}
