@@ -818,3 +818,101 @@ const DNAtoRNA2 = dna => dna.replace(/T/g, 'U');
 function DNAtoRNA3(dna) {
     return dna.split("T").join("U");
 }
+
+//Write a program that finds the summation of every number from 1 to num. The number will always be a positive integer greater than 0.
+const summation = function (num) {
+    let suma = 0;
+    for(let i = 0; i <= num; i++){
+        suma += i;
+    }
+    return suma;
+}
+
+//Write a function that returns a string in which firstname is swapped with last name.
+function nameShuffler(str){
+    return str.split(' ').reverse().join(' ');
+}
+
+// In this kata you get the start number and the end number of a region and should return the count of all numbers except numbers with a 5 in it. The start and the end number are both inclusive!
+function dontGiveMeFive(start, end){
+    let arr = [];
+    let regEx = /5/g;
+    for(let i = start; i <= end; i++){
+    arr.push(i)
+    }
+    const finalArr = arr.filter(num => String(num).indexOf('5') === -1);
+    return finalArr.length;
+}
+
+
+// You are going to be given a word. Your job is to return the middle character of the word. If the word's length is odd, return the middle character. If the word's length is even, return the middle 2 characters.
+function getMiddle(s)
+{
+    let arr = s.split('');
+    let newArr = []
+    if(arr.length % 2 === 0){
+        newArr.push(arr[arr.length / 2 - 1]);
+        newArr.push(arr[arr.length / 2]);
+        return newArr.join('')
+    }else{
+        newArr.push((arr[Math.floor(arr.length / 2)]));
+        return newArr.join('')
+    }
+}
+    
+function getMiddle2(s) {
+    var middle = s.length / 2;
+    return (s.length % 2) 
+        ? s.charAt(Math.floor(middle))
+        : s.slice(middle - 1, middle + 1);
+} 
+
+// Complete the solution so that it returns true if the first argument(string) passed in ends with the 2nd argument (also a string).
+function solution(str, ending){
+    return str.endsWith(ending);
+}
+
+const solution2 = (str, ending) => str.endsWith(ending);
+
+// Given an input of an array of digits, return the array with each digit incremented by its position in the array: the first digit will be incremented by 1, the second digit by 2, etc. Make sure to start counting your positions from 1 ( and not 0 ).
+// Your result can only contain single digit numbers, so if adding a digit with its position gives you a multiple-digit number, only the last digit of the number should be returned.
+// Notes:
+// return an empty array if your array is empty
+function incrementer(nums) {
+    let arr = [];
+    if(nums === []){
+        return [];
+    } else {
+        for(let i = 0; i < nums.length; i++){
+            let sum = nums[i] + 1 + i
+            if(sum > 9){
+                let str = sum.toString()
+                let lastStr = str[str.length - 1]
+                arr.push(Number(lastStr));
+            } else {
+                arr.push(sum);
+            }
+        }
+        return arr;
+    }
+}
+//-----------------------------------------------------------//
+function incrementer2(num) { 
+    return num.map((a,i) => (a+i+1)%10);
+}
+//------------------------------------------------------------//
+function incrementer3(num) { 
+    var arr=[];
+    for (var i=0; i<num.length; ++i)
+        arr.push((num[i]+i+1)%10)
+    return arr;
+}
+
+
+// Given 2 strings, a and b, return a string of the form short+long+short, with the shorter string on the outside and the longer string on the inside. The strings will not be the same length, but they may be empty ( zero length ).
+function solution4(a, b){
+    return a.length > b.length ? b + a + b : a + b + a;
+}
+
+const solution3 = (a, b) => a.length > b.length ? b + a + b : a + b + a;
+
