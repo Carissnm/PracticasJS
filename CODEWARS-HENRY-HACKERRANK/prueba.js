@@ -916,3 +916,17 @@ function solution4(a, b){
 
 const solution3 = (a, b) => a.length > b.length ? b + a + b : a + b + a;
 
+
+// make the first character in the string "word" upper case
+function capitalizeWord(word) {
+    let arr = word.split('');
+    console.log(arr)
+    arr[0] = arr[0].toUpperCase();
+    return arr.join('')
+}
+
+function capitalizeWord1(word) {
+    return word[0].toUpperCase() + word.slice(1);
+}
+
+const capitalizeWord2 = (word) => word.replace(word.charAt(0), word.charAt(0).toUpperCase());
